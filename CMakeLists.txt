@@ -18,11 +18,17 @@ if(NOT EXISTS "${CPM_FILE}")
 endif()
 include("${CPM_FILE}")
 
+option(TOWER_DEFENSE_EDITOR "Build the Ampersand editor (./build/ampersand_editor .)" OFF)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
+
 CPMAddPackage(
     NAME AmpersandEngine
     GITHUB_REPOSITORY Boz0o0/Ampersand-Engine
     GIT_TAG main
-    OPTIONS "AMPERSAND_MODULE_NET OFF"
+    OPTIONS
+        "AMPERSAND_MODULE_NET OFF"
+        "AMPERSAND_BUILD_EDITOR ${TOWER_DEFENSE_EDITOR}"
 )
 
 add_executable(tower_defense src/main.cpp src/GameBindings.cpp)
