@@ -1,4 +1,3 @@
--- The pause screen: shown while the game is paused, with its buttons.
 local State = require("state")
 local Util = require("util")
 

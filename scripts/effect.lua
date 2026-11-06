@@ -1,12 +1,5 @@
--- A short-lived effect (explosion, flash, smoke, popup text, debris). Its
--- Props:
---   life  seconds before it is removed
---   grow  scale added per second
---   spin  degrees per second
---   fade  whether it fades out (true if not given)
--- A Velocity in the prefab moves it (MovementSystem, which also pulls it
--- down with a Gravity: the debris), an Animation plays its frames
--- (AnimationSystem): the script only does the rest.
+-- Props: life (seconds), grow (scale per second), spin (degrees per second),
+-- fade (true if not given).
 local Util = require("util")
 
 local Effect = {}

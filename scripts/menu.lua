@@ -1,9 +1,5 @@
--- The background of the menus (on the "Level" entity, after map.lua): a few
--- towers fight a never ending parade of enemies. Its Props, next to the
--- ones of map.lua:
---   towers   list of { kind, col, row, level }
---   enemies  list of enemy prefabs, picked at random
---   interval seconds between two enemies
+-- After map.lua. Props: towers ({ kind, col, row, level }), enemies (prefabs
+-- picked at random), interval (seconds between two enemies).
 local State = require("state")
 local Units = require("units")
 

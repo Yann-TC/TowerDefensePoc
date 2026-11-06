@@ -1,21 +1,12 @@
--- A button: a Rectangle with an outline, its position being its top left
--- corner. Lit when the mouse is over it, pressed with a click or with its
--- key; the pointer hovers it through their BoxColliders (see pointer.lua).
--- Its Props:
---   action    scene, retry, menu (done here), or build, upgrade, sell, wave,
---             speed, pause (asked to the level through State.game.request)
---   argument  scene to load, or kind of tower to build
---   key       virtual button of the InputManager that presses it (optional)
--- Its BoxCollider is sized here like its Rectangle. Its first Text child is
--- its label, the second one (optional) is filled here: the cost of a tower,
--- the refund of a sale, the next wave countdown...
+-- Props: action (scene, retry, menu, or a request to the level: build,
+-- upgrade, sell, wave, speed, pause), argument (scene or tower kind), key
+-- (optional). Text children: the label, then an optional detail.
 local State = require("state")
 local TowerKinds = require("towerKinds")
 local Util = require("util")
 
 local Button = {}
 
--- The state of a selected tower's button: upgrade cost or sale refund.
 local function towerState(tower, action)
     if not tower then
         return false, "", false
@@ -30,8 +21,6 @@ local function towerState(tower, action)
     return true, nextLevel.cost .. " g", false
 end
 
--- For each action: whether it can be pressed, its detail text, whether it
--- is lit. The actions not listed are always enabled, never lit.
 local STATES = {
     build = function(game, argument)
         return true, TowerKinds[argument].levels[1].cost .. " g", game.building == argument
@@ -46,7 +35,6 @@ local STATES = {
     pause = function(game) return true, nil, game.paused end,
 }
 
--- The actions done by the button itself; the others are asked to the level.
 local PRESSES = {
     scene = function(argument) Util.changeScene(argument) end,
     retry = function() Util.changeScene(State.session.scene) end,

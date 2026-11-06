@@ -1,13 +1,8 @@
--- The towers of the game, by kind. Each level of a tower gives:
---   cost (to build it, or to upgrade to this level), damage, range (pixels),
---   rate (shots per second), splash (radius hurt around the impact).
--- The prefab gives the look of the tower and the sound of its shots: its
--- turret has an AnimationStateMachine picking its sprite from the level and
--- the reload (see tower.lua).
-
+-- Per level: cost (build or upgrade), damage, range (pixels), rate (shots per
+-- second), splash (radius around the impact).
 local TowerKinds = {
-    sellRatio = 0.7, -- Part of what a tower cost given back when sold
-    order = { "gun", "cannon", "rocket", "missile" }, -- Order of the buttons
+    sellRatio = 0.7,
+    order = { "gun", "cannon", "rocket", "missile" },
     gun = {
         name = "Gun", prefab = "world/prefabs/towers/gun.json",
         projectile = "world/prefabs/projectiles/bullet.json",

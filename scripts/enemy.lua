@@ -1,14 +1,4 @@
--- An enemy, created by Units.spawnEnemy: walks along the path (or flies
--- straight over it), shows its health when hurt, gives its reward when killed
--- and costs lives when it reaches the end. Its stats are in its Props
--- (health, speed, reward, damage, flying), copied to its entry in
--- State.enemies.
---
--- It moves through the Velocity of the entity, applied by the MovementSystem:
--- the script only changes it at each corner, and the children follow. The
--- entity itself never turns, so its health bar stays flat: its first child
--- is its body, its last one its health bar (a Rectangle), the ones in
--- between (turret of a tank, shadow of a plane) turn with the body.
+-- Children: the body, the parts turning with it, then the health bar.
 local State = require("state")
 local Units = require("units")
 local Util = require("util")
@@ -16,9 +6,9 @@ local Fx = require("fx")
 
 local Enemy = {}
 
-local TURN_SPEED = 400 -- Degrees per second
-local FLASH = 0.08     -- Seconds of red when hit
-local BIG_HEALTH = 200 -- From this health, the explosion is a big one
+local TURN_DEGREES_PER_SECOND = 400
+local HIT_FLASH_SECONDS = 0.08
+local BIG_EXPLOSION_HEALTH = 200
 
 function Enemy:start(dt)
     self.entry = State.enemyOf[self.entity.index]
@@ -54,9 +44,6 @@ function Enemy:update(dt)
     end
 end
 
----------------------------------------------------------------- route
-
--- The corners of the path, or only its two ends for a plane.
 function Enemy:buildRoute()
     local path = State.level.path
     if self.entry.flying then
@@ -74,7 +61,6 @@ function Enemy:routeLength()
     return length
 end
 
--- Heads to the next corner.
 function Enemy:startLeg()
     local from, to = self.route[self.leg], self.route[self.leg + 1]
     self.target = to
@@ -85,7 +71,6 @@ function Enemy:startLeg()
     velocity.y = math.sin(rad) * self.entry.speed
 end
 
--- Keeps its entry up to date (position, progress), and turns at the corners.
 function Enemy:walk(dt)
     local entry = self.entry
     local x, y = Util.position(self.entity)
@@ -108,12 +93,11 @@ function Enemy:reachCorner()
     end
 end
 
--- The body turns smoothly toward the way it goes.
 function Enemy:turn(dt)
     if self.angle == self.wanted then
         return
     end
-    self.angle = Util.turnToward(self.angle, self.wanted, TURN_SPEED * dt)
+    self.angle = Util.turnToward(self.angle, self.wanted, TURN_DEGREES_PER_SECOND * dt)
     if math.abs(Util.angleDelta(self.angle, self.wanted)) < 0.5 then
         self.angle = self.wanted
     end
@@ -126,14 +110,11 @@ function Enemy:face(angle)
     end
 end
 
----------------------------------------------------------------- health
-
--- Flashes red and redraws the health bar, only when the health changed.
 function Enemy:updateHealth(dt)
     local entry = self.entry
     if entry.health ~= self.health then
         self.health = entry.health
-        self.flash = FLASH
+        self.flash = HIT_FLASH_SECONDS
         Util.setColor(getSprite(self.body).color, 255, 120, 120, 255)
         self:updateBar()
     elseif self.flash > 0 then
@@ -144,7 +125,6 @@ function Enemy:updateHealth(dt)
     end
 end
 
--- Shorter and redder as the health goes down.
 function Enemy:updateBar()
     local ratio = Util.clamp(self.entry.health / self.entry.maxHealth, 0, 1)
     local bar = getRectangle(self.bar)
@@ -152,7 +132,6 @@ function Enemy:updateBar()
     Util.setColor(bar.fill, 255 * math.min(1, 2 - 2 * ratio), 220 * math.min(1, 2 * ratio), 60, 255)
 end
 
--- Killed: the reward (in a level), an explosion.
 function Enemy:die()
     local entry = self.entry
     local x, y = Util.position(self.entity)
@@ -160,12 +139,11 @@ function Enemy:die()
         State.game.gold = State.game.gold + entry.reward
         Fx.popup("+" .. entry.reward, x - 10, y - 30)
     end
-    local big = entry.maxHealth >= BIG_HEALTH
+    local big = entry.maxHealth >= BIG_EXPLOSION_HEALTH
     Fx.explode(x, y, big and 1.6 or 0.8, big)
     Units.removeEnemy(entry)
 end
 
--- Reached the end of the path: the player loses lives.
 function Enemy:leak()
     local game = State.game
     if game.playing then

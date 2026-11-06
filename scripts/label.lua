@@ -1,5 +1,4 @@
--- A text of the HUD showing a value of the game. Its Props:
---   show  gold, lives or wave
+-- Props: show (gold, lives or wave).
 local State = require("state")
 
 local Label = {}

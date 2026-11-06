@@ -1,5 +1,4 @@
--- The texts of the result screen, from State.session. Its children are the
--- title then the details.
+-- Children: the title, then the details.
 local State = require("state")
 local Util = require("util")
 

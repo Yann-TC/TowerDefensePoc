@@ -1,4 +1,4 @@
--- A title that gently pulses, centered on the x of its Props.
+-- Props: x (center of the title).
 local Util = require("util")
 
 local Title = {}

@@ -93,17 +93,8 @@ void bindResources(sol::state& lua, ecs::World& world) {
         "Stats", sol::no_constructor, "frameMs",
         sol::readonly(&Stats::frameMs), "updateMs",
         sol::readonly(&Stats::updateMs), "fps", sol::readonly(&Stats::fps),
-        "entities", sol::readonly(&Stats::entities), "history",
-        [](const Stats& stats) { return sol::as_table(stats.history); },
-        "value",
-        [](const Stats& stats, const std::string& name) {
-            const auto found = stats.values.find(name);
-            return found == stats.values.end() ? 0.0F : found->second;
-        },
-        "setValue", [](Stats& stats, const std::string& name, float value) {
-            stats.values[name] = value;
-        });
-    lua.set_function("getStats", [&world]() -> Stats& {
+        "entities", sol::readonly(&Stats::entities));
+    lua.set_function("getStats", [&world]() -> const Stats& {
         return world.getResource<Stats>();
     });
     lua.set_function("getCollisions", [&world](ecs::Entity entity) {

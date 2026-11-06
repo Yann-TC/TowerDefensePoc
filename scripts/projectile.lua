@@ -1,18 +1,12 @@
--- A shot fired by a tower: flies to its target through its Velocity (moved
--- by the MovementSystem), then hurts the target, or every enemy around the
--- impact if it has a splash. The tower gives the target and the damage in
--- State.shotOf; the prefab gives the rest in its Props:
---   speed      pixels per second
---   homing     follows its target instead of going where it was
---   explosion  scale of the explosion on impact, none for a small spark
---   trail      seconds between two puffs of smoke behind it (optional)
+-- Props: speed, homing, explosion (scale, optional), trail (seconds between
+-- two puffs, optional).
 local State = require("state")
 local Util = require("util")
 local Fx = require("fx")
 
 local Projectile = {}
 
-local IMPACT_MARGIN = 4 -- Pixels from the target counted as a hit
+local IMPACT_MARGIN = 4
 
 function Projectile:start(dt)
     self.props = getProps(self.entity)
@@ -58,7 +52,6 @@ function Projectile:canHit(enemy)
     return self.shot.ground
 end
 
--- Damages the target, or every enemy it can hit around the impact.
 function Projectile:hit()
     local shot = self.shot
     if shot.splash > 0 then

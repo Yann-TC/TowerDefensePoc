@@ -1,5 +1,3 @@
--- The text of the panel about the selected tower: its name, level and
--- stats, or how to select one.
 local State = require("state")
 local TowerKinds = require("towerKinds")
 

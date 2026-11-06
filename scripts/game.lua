@@ -1,17 +1,5 @@
--- The player in a level (on the "Level" entity, after map.lua): places the
--- towers (a ghost tower follows the pointer, snapped to the grid), selects
--- them, upgrades and sells them, pauses and speeds up the game. The buttons
--- of the HUD ask for actions through State.game.request; the "wave"
--- request is left to waves.lua.
---
--- Everything goes through the pointer (the mouse, see pointer.lua); a tower
--- is selected when the pointer touches its BoxCollider. Holding "Chain"
--- (Shift) keeps building the same tower after each one, releasing it stops;
--- "PreviousTower" / "NextTower" (Q / E) go through the towers to build.
---
--- Its child without an AudioSource is the frame drawn on the cell under the
--- pointer (a Rectangle with an outline).
--- The "towers" of its Props are built when the level starts (optional).
+-- After map.lua. Props: towers (optional, built at the start). Child without
+-- an AudioSource: the frame on the cell under the pointer.
 local State = require("state")
 local TowerKinds = require("towerKinds")
 local Units = require("units")
@@ -20,7 +8,6 @@ local Fx = require("fx")
 
 local Game = {}
 
--- What each request of a button does.
 local REQUESTS = {
     build = function(self, kind) self:startBuilding(kind) end,
     upgrade = function(self) self:upgrade() end,
@@ -84,7 +71,6 @@ function Game:handleKeys(game)
     end
 end
 
--- Escape cancels what is being done, or pauses.
 function Game:escape(game)
     if self.ghost or game.selected then
         self:cancel()
@@ -103,7 +89,6 @@ function Game:cancel()
     State.game.selected = nil
 end
 
--- The cell under the pointer, nil outside of the map.
 function Game:pointerCell()
     local at = State.pointer
     if at.x < 0 or at.y < 0 or at.x >= Util.MAP_WIDTH then
@@ -112,7 +97,6 @@ function Game:pointerCell()
     return Units.cellAt(at.x, at.y)
 end
 
--- The placed tower whose BoxCollider the pointer touches, if any.
 function Game:pointedTower()
     for _, other in ipairs(State.pointed) do
         local tower = State.towerOf[other.index]
@@ -128,7 +112,6 @@ function Game:refuse(text)
     State.playSound("error")
 end
 
--- The tower after (step 1) or before (step -1) the one being built.
 function Game:cycleTower(step)
     local order = TowerKinds.order
     local index = 0
@@ -143,7 +126,6 @@ function Game:cycleTower(step)
     self:startBuilding(order[(index + step - 1) % #order + 1])
 end
 
--- A second press on the same tower button stops building.
 function Game:startBuilding(kind)
     local wasBuilding = State.game.building
     self:cancel()
@@ -162,7 +144,6 @@ function Game:startBuilding(kind)
     State.game.building = kind
 end
 
--- The ghost follows the pointer, green where it can be built, red elsewhere.
 function Game:moveGhost()
     local col, row = self:pointerCell()
     local cost = TowerKinds[self.ghost.kind].levels[1].cost
@@ -186,7 +167,6 @@ function Game:moveGhost()
     end
 end
 
--- Builds the ghost; with "Chain" held, a new ghost of the same kind follows.
 function Game:build(col, row, cost)
     local tower = self.ghost
     self.ghost = nil
@@ -203,7 +183,6 @@ function Game:build(col, row, cost)
     end
 end
 
--- A click on a tower selects it, a click elsewhere on the map unselects.
 function Game:clickMap()
     if not self:pointerCell() then
         return
@@ -247,7 +226,6 @@ function Game:sell()
     State.playSound("sell")
 end
 
--- The frame on the cell under the pointer, while building or over a tower.
 function Game:updateCursor()
     local col, row = self:pointerCell()
     if not col or not (self.ghost or self:pointedTower()) then

@@ -1,14 +1,5 @@
--- The waves of the level (on the "Level" entity, after game.lua), from the
--- "waves" of its Props:
---   { "groups": [ { "enemy": prefab, "count", "interval", "delay", "health" } ],
---     "bonus": gold given when the wave is cleared }
--- "delay" waits before the first enemy of the group, "health" multiplies
--- the health of its enemies (both optional). The "difficulty" of the level
--- multiplies the health of every enemy (optional).
---
--- The first wave starts when the player asks for it (SPACE or the button),
--- the next ones after a countdown, or sooner for a bonus. The level is won
--- when the last wave is cleared, lost when there are no lives left.
+-- After game.lua. Props: waves ({ groups = { enemy, count, interval, delay,
+-- health }, bonus }), difficulty (health multiplier, optional).
 local State = require("state")
 local Units = require("units")
 local Util = require("util")
@@ -16,9 +7,9 @@ local Fx = require("fx")
 
 local Waves = {}
 
-local PAUSE = 15        -- Seconds between two waves
-local EARLY_BONUS = 2   -- Gold per second left when a wave is called early
-local END_DELAY = 3     -- Seconds before the result screen
+local SECONDS_BETWEEN_WAVES = 15
+local EARLY_BONUS_PER_SECOND = 2
+local RESULT_DELAY = 3
 
 function Waves:start(dt)
     self.waves = State.level.waves
@@ -48,13 +39,12 @@ function Waves:update(dt)
     self:checkEnd(game)
 end
 
--- Starts the next wave; called early, it gives a bonus.
 function Waves:call(game)
     if game.wave >= #self.waves then
         return
     end
     if game.countdown > 1 then
-        local bonus = math.floor(game.countdown) * EARLY_BONUS
+        local bonus = math.floor(game.countdown) * EARLY_BONUS_PER_SECOND
         game.gold = game.gold + bonus
         Fx.popup("+" .. bonus .. " early bonus", Util.MAP_WIDTH / 2 - 80, 80)
     end
@@ -99,19 +89,18 @@ function Waves:checkEnd(game)
         return
     end
     State.message("Wave cleared!  +" .. bonus .. " gold", 2.5)
-    game.countdown = PAUSE
+    game.countdown = SECONDS_BETWEEN_WAVES
 end
 
--- Keeps the result for the result screen, which shows it after a while.
 function Waves:startEnding(game, won)
-    self.ending = END_DELAY
+    self.ending = RESULT_DELAY
     local session = State.session
     session.scene = getCurrentScene()
     session.name = State.level.name
     session.won = won
     session.wave = won and game.wave or math.max(0, game.wave - 1)
     session.waves = #self.waves
-    State.message(won and "VICTORY!" or "DEFEAT", END_DELAY)
+    State.message(won and "VICTORY!" or "DEFEAT", RESULT_DELAY)
     State.playSound(won and "victory" or "defeat")
 end
 

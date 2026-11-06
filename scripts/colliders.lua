@@ -1,10 +1,4 @@
--- Debug view of the physics, shown or hidden with C: the bounds of every
--- BoxCollider (getColliders, getBounds), red when the CollisionSystem found
--- it touching another one (getCollisions), green otherwise. Its Props:
---   shown  whether it is shown when the scene starts
---
--- Each bounds is drawn by an outlined Rectangle, created when needed and
--- kept for the next frames: the extra ones are hidden.
+-- Props: shown (at the start of the scene).
 local Util = require("util")
 
 local Colliders = {}
@@ -29,7 +23,6 @@ function Colliders:update(dt)
     end
 end
 
--- The i-th Rectangle, created the first time it is needed.
 function Colliders:box(i)
     if not self.boxes[i] then
         self.boxes[i] = instantiate(BOX)

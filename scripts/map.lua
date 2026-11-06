@@ -1,10 +1,5 @@
--- The level of a scene, first script of its "Level" entity. Its Props:
---   name, tileSize, grid (rows of characters, see LEGEND), and for the
---   levels: gold, lives and waves (see waves.lua)
--- Builds the map (a ground tile per cell, the decorations, a border along
--- the path), finds the path from 'S' to 'E' through the '#', and keeps it all
--- in State.level. Its children with an AudioSource are the sounds of the
--- scene, named by the "sound" of their Props (see State.playSound).
+-- First script of the Level entity. Props: name, tileSize, grid, gold, lives,
+-- waves. Children with an AudioSource: the sounds, named by their Props.sound.
 local State = require("state")
 local Units = require("units")
 local Util = require("util")
@@ -45,7 +40,6 @@ function Map:start(dt)
     end
 end
 
--- A new frame: the explosions can be heard again (see Fx.explode).
 function Map:update(dt)
     State.booms = 0
 end
@@ -69,7 +63,6 @@ function Map:find(wanted)
     error("the grid has no '" .. wanted .. "'")
 end
 
--- The path cell next to a cell, not seen yet.
 local function nextCell(current, seen)
     for _, step in ipairs(STEPS) do
         local col, row = current[1] + step[1], current[2] + step[2]
@@ -80,7 +73,6 @@ local function nextCell(current, seen)
     error("the path stops at column " .. current[1] .. ", row " .. current[2])
 end
 
--- The cells from 'S' to 'E', each one next to the previous one.
 function Map:walk()
     local cells = { self:find("S") }
     local seen = { [cells[1][1] .. "," .. cells[1][2]] = true }
@@ -92,8 +84,6 @@ function Map:walk()
     return cells
 end
 
--- The corners of the path, from one tile before 'S' to one tile after 'E'
--- (outside the map when they are on its border).
 function Map:findPath()
     local cells = self:walk()
     local points = {}
@@ -127,8 +117,6 @@ function Map:buildCell(col, row)
     end
 end
 
--- A dark line on each side of a path cell that touches the grass. None on
--- the border of the map: the path goes on there.
 function Map:buildBorders(col, row, x, y)
     local half = State.level.size / 2
     local sides = {
