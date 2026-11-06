@@ -1,0 +1,41 @@
+{
+    "version": 2,
+    "name": "Pointer",
+    "components": {
+        "Transform": {
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+            },
+            "rotationDegrees": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "origin": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            }
+        },
+        "BoxCollider": {
+            "bounds": {
+                "x": 0,
+                "y": 0,
+                "width": 1,
+                "height": 1
+            }
+        },
+        "Scripts": {
+            "scripts": [
+                "scripts/pointer.lua"
+            ]
+        }
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "version": 2,
+    "name": "Muzzle flash",
+    "components": {
+        "Transform": {
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "scale": {
+                "x": 0.6,
+                "y": 0.6,
+                "z": 1
+            },
+            "rotationDegrees": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "origin": {
+                "x": 32,
+                "y": 56,
+                "z": 0
+            }
+        },
+        "Sprite": {
+            "texture": "assets/tilesheet.png",
+            "source": {
+                "x": 1344,
+                "y": 768,
+                "width": 64,
+                "height": 64
+            },
+            "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "layer": 16
+        },
+        "Props": {
+            "life": 0.06,
+            "fade": false
+        },
+        "Scripts": {
+            "scripts": [
+                "scripts/effect.lua"
+            ]
+        }
+    }
+}

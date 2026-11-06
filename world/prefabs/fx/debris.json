@@ -1,0 +1,62 @@
+{
+    "version": 2,
+    "name": "Debris",
+    "components": {
+        "Transform": {
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+            },
+            "rotationDegrees": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "origin": {
+                "x": 3,
+                "y": 3,
+                "z": 0
+            }
+        },
+        "Circle": {
+            "radius": 3,
+            "fill": {
+                "r": 70,
+                "g": 60,
+                "b": 50,
+                "a": 255
+            },
+            "outline": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0
+            },
+            "outlineThickness": 0,
+            "layer": 21
+        },
+        "Velocity": {
+            "value": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Gravity": {
+            "scale": 1
+        },
+        "Props": {
+            "life": 0.7
+        },
+        "Scripts": {
+            "scripts": [
+                "scripts/effect.lua"
+            ]
+        }
+    }
+}

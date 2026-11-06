@@ -1,0 +1,104 @@
+{
+    "version": 2,
+    "gameRoot": "./",
+    "startScene": "menu",
+    "scenes": {
+        "menu": "world/scenes/menu.json",
+        "level1": "world/scenes/level1.json",
+        "level2": "world/scenes/level2.json",
+        "gameover": "world/scenes/gameover.json",
+        "level3": "world/scenes/level3.json"
+    },
+    "resources": {
+        "Renderer": {
+            "backend": "sfml",
+            "title": "Ampersand Tower Defense",
+            "size": {
+                "x": 1280,
+                "y": 768
+            },
+            "vsync": true
+        },
+        "Camera": {
+            "center": {
+                "x": 640,
+                "y": 384
+            },
+            "size": {
+                "x": 1280,
+                "y": 768
+            }
+        },
+        "ClearColor": {
+            "value": {
+                "r": 30,
+                "g": 30,
+                "b": 30,
+                "a": 255
+            }
+        },
+        "AudioListener": {
+            "backend": "sfml",
+            "volume": 70
+        },
+        "InputManager": {
+            "buttons": {
+                "Select": [
+                    "Left"
+                ],
+                "Cancel": [
+                    "Right"
+                ],
+                "Pause": [
+                    "Escape",
+                    "P"
+                ],
+                "NextWave": [
+                    "Space",
+                    "N"
+                ],
+                "Speed": [
+                    "F"
+                ],
+                "Upgrade": [
+                    "U"
+                ],
+                "Sell": [
+                    "S"
+                ],
+                "Tower1": [
+                    "Alpha1"
+                ],
+                "Tower2": [
+                    "Alpha2"
+                ],
+                "Tower3": [
+                    "Alpha3"
+                ],
+                "Tower4": [
+                    "Alpha4"
+                ],
+                "Stats": [
+                    "Tab"
+                ],
+                "PreviousTower": [
+                    "Q"
+                ],
+                "NextTower": [
+                    "E"
+                ],
+                "Chain": [
+                    "LeftShift",
+                    "RightShift"
+                ],
+                "Colliders": [
+                    "C"
+                ]
+            }
+        },
+        "GravityForce": {
+            "value": 900
+        },
+        "Stats": {}
+    }
+}

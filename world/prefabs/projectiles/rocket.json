@@ -1,0 +1,61 @@
+{
+    "version": 2,
+    "name": "Rocket",
+    "components": {
+        "Transform": {
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "scale": {
+                "x": 0.7,
+                "y": 0.7,
+                "z": 1
+            },
+            "rotationDegrees": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "origin": {
+                "x": 32,
+                "y": 32,
+                "z": 0
+            }
+        },
+        "Sprite": {
+            "texture": "assets/tilesheet.png",
+            "source": {
+                "x": 1344,
+                "y": 640,
+                "width": 64,
+                "height": 64
+            },
+            "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "layer": 18
+        },
+        "Velocity": {
+            "value": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Props": {
+            "speed": 330,
+            "homing": true,
+            "explosion": 0.6,
+            "trail": 0.04
+        },
+        "Scripts": {
+            "scripts": [
+                "scripts/projectile.lua"
+            ]
+        }
+    }
+}

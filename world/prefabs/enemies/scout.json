@@ -1,0 +1,137 @@
+{
+    "version": 2,
+    "name": "Scout",
+    "components": {
+        "Transform": {
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+            },
+            "rotationDegrees": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "origin": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            }
+        },
+        "Props": {
+            "health": 22,
+            "speed": 100,
+            "reward": 3,
+            "damage": 1
+        },
+        "Scripts": {
+            "scripts": [
+                "scripts/enemy.lua"
+            ]
+        },
+        "Velocity": {
+            "value": {
+                "x": 0,
+                "y": 0
+            }
+        }
+    },
+    "children": [
+        {
+            "name": "Body",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 32,
+                        "y": 32,
+                        "z": 0
+                    }
+                },
+                "Sprite": {
+                    "texture": "assets/tilesheet.png",
+                    "source": {
+                        "x": 1024,
+                        "y": 640,
+                        "width": 64,
+                        "height": 64
+                    },
+                    "color": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255,
+                        "a": 255
+                    },
+                    "layer": 12
+                }
+            }
+        },
+        {
+            "name": "Health",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": -18.0,
+                        "y": -38,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 36,
+                        "y": 5
+                    },
+                    "fill": {
+                        "r": 60,
+                        "g": 220,
+                        "b": 60,
+                        "a": 0
+                    },
+                    "outline": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0,
+                        "a": 0
+                    },
+                    "outlineThickness": 0,
+                    "layer": 36
+                }
+            }
+        }
+    ]
+}

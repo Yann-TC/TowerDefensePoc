@@ -1,0 +1,230 @@
+{
+    "version": 2,
+    "name": "level1",
+    "resources": {
+        "SceneMusic": {
+            "music": "assets/Audio/game_music.wav",
+            "volume": 45,
+            "loop": true,
+            "playing": true
+        }
+    },
+    "entities": [
+        {
+            "name": "Level",
+            "prefab": "world/prefabs/level.json",
+            "components": {
+                "Props": {
+                    "name": "Green Valley",
+                    "tileSize": 64,
+                    "grid": [
+                        "T....t.....B...T.",
+                        "..r......p.......",
+                        "S####............",
+                        "....#....######..",
+                        ".p..#....#....#..",
+                        "....#..t.#....#.r",
+                        "....#....#....#..",
+                        "....#....#..B.#..",
+                        "..t.######....#..",
+                        "..............##E",
+                        ".R.....o.....p...",
+                        "t....T.....r....T"
+                    ],
+                    "gold": 200,
+                    "lives": 20,
+                    "waves": [
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/soldier.json",
+                                    "count": 8,
+                                    "interval": 1.0
+                                }
+                            ],
+                            "bonus": 20
+                        },
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/soldier.json",
+                                    "count": 12,
+                                    "interval": 0.8
+                                }
+                            ],
+                            "bonus": 25
+                        },
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/soldier.json",
+                                    "count": 8,
+                                    "interval": 0.9
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/scout.json",
+                                    "count": 8,
+                                    "interval": 0.6,
+                                    "delay": 5
+                                }
+                            ],
+                            "bonus": 30
+                        },
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/scout.json",
+                                    "count": 16,
+                                    "interval": 0.45
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/heavy.json",
+                                    "count": 3,
+                                    "interval": 2,
+                                    "delay": 4
+                                }
+                            ],
+                            "bonus": 35
+                        },
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/tank.json",
+                                    "count": 2,
+                                    "interval": 4
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/soldier.json",
+                                    "count": 12,
+                                    "interval": 0.7,
+                                    "delay": 1
+                                }
+                            ],
+                            "bonus": 40
+                        },
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/plane.json",
+                                    "count": 6,
+                                    "interval": 1.2
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/soldier.json",
+                                    "count": 10,
+                                    "interval": 0.7,
+                                    "delay": 3
+                                }
+                            ],
+                            "bonus": 45
+                        },
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/heavy.json",
+                                    "count": 6,
+                                    "interval": 1.4,
+                                    "health": 1.2
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/scout.json",
+                                    "count": 14,
+                                    "interval": 0.4,
+                                    "delay": 4,
+                                    "health": 1.3
+                                }
+                            ],
+                            "bonus": 50
+                        },
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/tank.json",
+                                    "count": 4,
+                                    "interval": 3,
+                                    "health": 1.2
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/plane.json",
+                                    "count": 8,
+                                    "interval": 0.9,
+                                    "delay": 5,
+                                    "health": 1.3
+                                }
+                            ],
+                            "bonus": 55
+                        },
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/soldier.json",
+                                    "count": 20,
+                                    "interval": 0.45,
+                                    "health": 1.6
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/heavy.json",
+                                    "count": 6,
+                                    "interval": 1.5,
+                                    "delay": 6
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/bomber.json",
+                                    "count": 2,
+                                    "interval": 3,
+                                    "delay": 10
+                                }
+                            ],
+                            "bonus": 60
+                        },
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/boss.json",
+                                    "count": 1,
+                                    "interval": 1
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/tank.json",
+                                    "count": 3,
+                                    "interval": 4,
+                                    "delay": 6
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/bomber.json",
+                                    "count": 3,
+                                    "interval": 2.5,
+                                    "delay": 12
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/scout.json",
+                                    "count": 16,
+                                    "interval": 0.4,
+                                    "delay": 3
+                                }
+                            ],
+                            "bonus": 0
+                        }
+                    ],
+                    "difficulty": 1.15
+                }
+            }
+        },
+        {
+            "name": "Hud",
+            "prefab": "world/prefabs/ui/hud.json"
+        },
+        {
+            "name": "Stats",
+            "prefab": "world/prefabs/ui/stats.json"
+        },
+        {
+            "name": "Pointer",
+            "prefab": "world/prefabs/ui/pointer.json"
+        },
+        {
+            "name": "Colliders",
+            "prefab": "world/prefabs/ui/colliders.json"
+        }
+    ]
+}

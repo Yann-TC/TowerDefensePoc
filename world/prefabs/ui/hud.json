@@ -1,0 +1,2653 @@
+{
+    "version": 2,
+    "name": "Hud",
+    "components": {
+        "Transform": {
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+            },
+            "rotationDegrees": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "origin": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            }
+        }
+    },
+    "children": [
+        {
+            "name": "Banner",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 0,
+                        "y": 20,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Text": {
+                    "font": "assets/font.ttf",
+                    "value": "",
+                    "size": 26,
+                    "color": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255,
+                        "a": 255
+                    },
+                    "layer": 151
+                },
+                "Scripts": {
+                    "scripts": [
+                        "scripts/banner.lua"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "name": "Banner back",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 0,
+                                "y": -6,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Rectangle": {
+                            "size": {
+                                "x": 100,
+                                "y": 44
+                            },
+                            "fill": {
+                                "r": 0,
+                                "g": 0,
+                                "b": 0,
+                                "a": 0
+                            },
+                            "outline": {
+                                "r": 0,
+                                "g": 0,
+                                "b": 0,
+                                "a": 0
+                            },
+                            "outlineThickness": 0,
+                            "layer": 150
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Panel",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1088,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 192,
+                        "y": 768
+                    },
+                    "fill": {
+                        "r": 36,
+                        "g": 40,
+                        "b": 48,
+                        "a": 255
+                    },
+                    "outline": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0,
+                        "a": 0
+                    },
+                    "outlineThickness": 0,
+                    "layer": 100
+                }
+            }
+        },
+        {
+            "name": "Panel edge",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1088,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 4,
+                        "y": 768
+                    },
+                    "fill": {
+                        "r": 20,
+                        "g": 22,
+                        "b": 26,
+                        "a": 255
+                    },
+                    "outline": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0,
+                        "a": 0
+                    },
+                    "outlineThickness": 0,
+                    "layer": 101
+                }
+            }
+        },
+        {
+            "name": "Wave",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1102,
+                        "y": 12,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Text": {
+                    "font": "assets/font.ttf",
+                    "value": "Wave 0 / 0",
+                    "size": 24,
+                    "color": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255,
+                        "a": 255
+                    },
+                    "layer": 112
+                },
+                "Props": {
+                    "show": "wave"
+                },
+                "Scripts": {
+                    "scripts": [
+                        "scripts/label.lua"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Coin",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1112,
+                        "y": 66,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 0.9,
+                        "y": 0.9,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 32,
+                        "y": 32,
+                        "z": 0
+                    }
+                },
+                "Sprite": {
+                    "texture": "assets/tilesheet.png",
+                    "source": {
+                        "x": 1216,
+                        "y": 704,
+                        "width": 64,
+                        "height": 64
+                    },
+                    "color": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255,
+                        "a": 255
+                    },
+                    "layer": 111
+                }
+            }
+        },
+        {
+            "name": "Gold",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1128,
+                        "y": 52,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Text": {
+                    "font": "assets/font.ttf",
+                    "value": "0",
+                    "size": 24,
+                    "color": {
+                        "r": 255,
+                        "g": 215,
+                        "b": 64,
+                        "a": 255
+                    },
+                    "layer": 112
+                },
+                "Props": {
+                    "show": "gold"
+                },
+                "Scripts": {
+                    "scripts": [
+                        "scripts/label.lua"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Heart",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1204,
+                        "y": 58,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Circle": {
+                    "radius": 8,
+                    "fill": {
+                        "r": 230,
+                        "g": 70,
+                        "b": 70,
+                        "a": 255
+                    },
+                    "outline": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0,
+                        "a": 0
+                    },
+                    "outlineThickness": 0,
+                    "layer": 111
+                }
+            }
+        },
+        {
+            "name": "Lives",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1226,
+                        "y": 52,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Text": {
+                    "font": "assets/font.ttf",
+                    "value": "0",
+                    "size": 24,
+                    "color": {
+                        "r": 255,
+                        "g": 120,
+                        "b": 110,
+                        "a": 255
+                    },
+                    "layer": 112
+                },
+                "Props": {
+                    "show": "lives"
+                },
+                "Scripts": {
+                    "scripts": [
+                        "scripts/label.lua"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Towers title",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1102,
+                        "y": 100,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Text": {
+                    "font": "assets/font.ttf",
+                    "value": "TOWERS",
+                    "size": 15,
+                    "color": {
+                        "r": 170,
+                        "g": 178,
+                        "b": 190,
+                        "a": 255
+                    },
+                    "layer": 112
+                }
+            }
+        },
+        {
+            "name": "Gun button",
+            "prefab": "world/prefabs/ui/button.json",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1096,
+                        "y": 122,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 176,
+                        "y": 60
+                    },
+                    "fill": {
+                        "r": 58,
+                        "g": 66,
+                        "b": 80,
+                        "a": 255
+                    },
+                    "layer": 110
+                },
+                "Props": {
+                    "action": "build",
+                    "argument": "gun",
+                    "key": "Tower1"
+                }
+            },
+            "children": [
+                {
+                    "name": "Icon base",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 30,
+                                "y": 30,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 0.8,
+                                "y": 0.8,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 32,
+                                "y": 32,
+                                "z": 0
+                            }
+                        },
+                        "Sprite": {
+                            "texture": "assets/tilesheet.png",
+                            "source": {
+                                "x": 1216,
+                                "y": 448,
+                                "width": 64,
+                                "height": 64
+                            },
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 111
+                        }
+                    }
+                },
+                {
+                    "name": "Icon turret",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 30,
+                                "y": 30,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 0.8,
+                                "y": 0.8,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 32,
+                                "y": 32,
+                                "z": 0
+                            }
+                        },
+                        "Sprite": {
+                            "texture": "assets/tilesheet.png",
+                            "source": {
+                                "x": 1216,
+                                "y": 640,
+                                "width": 64,
+                                "height": 64
+                            },
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Label",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 64,
+                                "y": 7,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "Gun",
+                            "size": 20,
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Detail",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 64,
+                                "y": 35,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "",
+                            "size": 16,
+                            "color": {
+                                "r": 255,
+                                "g": 215,
+                                "b": 64,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Key",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 158,
+                                "y": 6,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "1",
+                            "size": 13,
+                            "color": {
+                                "r": 170,
+                                "g": 178,
+                                "b": 190,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Cannon button",
+            "prefab": "world/prefabs/ui/button.json",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1096,
+                        "y": 188,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 176,
+                        "y": 60
+                    },
+                    "fill": {
+                        "r": 58,
+                        "g": 66,
+                        "b": 80,
+                        "a": 255
+                    },
+                    "layer": 110
+                },
+                "Props": {
+                    "action": "build",
+                    "argument": "cannon",
+                    "key": "Tower2"
+                }
+            },
+            "children": [
+                {
+                    "name": "Icon base",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 30,
+                                "y": 30,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 0.8,
+                                "y": 0.8,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 32,
+                                "y": 32,
+                                "z": 0
+                            }
+                        },
+                        "Sprite": {
+                            "texture": "assets/tilesheet.png",
+                            "source": {
+                                "x": 1280,
+                                "y": 448,
+                                "width": 64,
+                                "height": 64
+                            },
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 111
+                        }
+                    }
+                },
+                {
+                    "name": "Icon turret",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 30,
+                                "y": 30,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 0.8,
+                                "y": 0.8,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 32,
+                                "y": 32,
+                                "z": 0
+                            }
+                        },
+                        "Sprite": {
+                            "texture": "assets/tilesheet.png",
+                            "source": {
+                                "x": 1216,
+                                "y": 576,
+                                "width": 64,
+                                "height": 64
+                            },
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Label",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 64,
+                                "y": 7,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "Cannon",
+                            "size": 20,
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Detail",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 64,
+                                "y": 35,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "",
+                            "size": 16,
+                            "color": {
+                                "r": 255,
+                                "g": 215,
+                                "b": 64,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Key",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 158,
+                                "y": 6,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "2",
+                            "size": 13,
+                            "color": {
+                                "r": 170,
+                                "g": 178,
+                                "b": 190,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Rocket button",
+            "prefab": "world/prefabs/ui/button.json",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1096,
+                        "y": 254,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 176,
+                        "y": 60
+                    },
+                    "fill": {
+                        "r": 58,
+                        "g": 66,
+                        "b": 80,
+                        "a": 255
+                    },
+                    "layer": 110
+                },
+                "Props": {
+                    "action": "build",
+                    "argument": "rocket",
+                    "key": "Tower3"
+                }
+            },
+            "children": [
+                {
+                    "name": "Icon base",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 30,
+                                "y": 30,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 0.8,
+                                "y": 0.8,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 32,
+                                "y": 32,
+                                "z": 0
+                            }
+                        },
+                        "Sprite": {
+                            "texture": "assets/tilesheet.png",
+                            "source": {
+                                "x": 1344,
+                                "y": 448,
+                                "width": 64,
+                                "height": 64
+                            },
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 111
+                        }
+                    }
+                },
+                {
+                    "name": "Icon turret",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 30,
+                                "y": 30,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 0.8,
+                                "y": 0.8,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 32,
+                                "y": 32,
+                                "z": 0
+                            }
+                        },
+                        "Sprite": {
+                            "texture": "assets/tilesheet.png",
+                            "source": {
+                                "x": 1408,
+                                "y": 512,
+                                "width": 64,
+                                "height": 64
+                            },
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Label",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 64,
+                                "y": 7,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "Rocket",
+                            "size": 20,
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Detail",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 64,
+                                "y": 35,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "",
+                            "size": 16,
+                            "color": {
+                                "r": 255,
+                                "g": 215,
+                                "b": 64,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Key",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 158,
+                                "y": 6,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "3",
+                            "size": 13,
+                            "color": {
+                                "r": 170,
+                                "g": 178,
+                                "b": 190,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Missile button",
+            "prefab": "world/prefabs/ui/button.json",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1096,
+                        "y": 320,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 176,
+                        "y": 60
+                    },
+                    "fill": {
+                        "r": 58,
+                        "g": 66,
+                        "b": 80,
+                        "a": 255
+                    },
+                    "layer": 110
+                },
+                "Props": {
+                    "action": "build",
+                    "argument": "missile",
+                    "key": "Tower4"
+                }
+            },
+            "children": [
+                {
+                    "name": "Icon base",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 30,
+                                "y": 30,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 0.8,
+                                "y": 0.8,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 32,
+                                "y": 32,
+                                "z": 0
+                            }
+                        },
+                        "Sprite": {
+                            "texture": "assets/tilesheet.png",
+                            "source": {
+                                "x": 1408,
+                                "y": 448,
+                                "width": 64,
+                                "height": 64
+                            },
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 111
+                        }
+                    }
+                },
+                {
+                    "name": "Icon turret",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 30,
+                                "y": 30,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 0.8,
+                                "y": 0.8,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 32,
+                                "y": 32,
+                                "z": 0
+                            }
+                        },
+                        "Sprite": {
+                            "texture": "assets/tilesheet.png",
+                            "source": {
+                                "x": 1344,
+                                "y": 512,
+                                "width": 64,
+                                "height": 64
+                            },
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Label",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 64,
+                                "y": 7,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "Missile",
+                            "size": 20,
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Detail",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 64,
+                                "y": 35,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "",
+                            "size": 16,
+                            "color": {
+                                "r": 255,
+                                "g": 215,
+                                "b": 64,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Key",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 158,
+                                "y": 6,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "4",
+                            "size": 13,
+                            "color": {
+                                "r": 170,
+                                "g": 178,
+                                "b": 190,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Info title",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1102,
+                        "y": 392,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Text": {
+                    "font": "assets/font.ttf",
+                    "value": "SELECTED",
+                    "size": 15,
+                    "color": {
+                        "r": 170,
+                        "g": 178,
+                        "b": 190,
+                        "a": 255
+                    },
+                    "layer": 112
+                }
+            }
+        },
+        {
+            "name": "Tower info",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1102,
+                        "y": 412,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Text": {
+                    "font": "assets/font.ttf",
+                    "value": "",
+                    "size": 15,
+                    "color": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255,
+                        "a": 255
+                    },
+                    "layer": 112
+                },
+                "Scripts": {
+                    "scripts": [
+                        "scripts/towerInfo.lua"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Upgrade button",
+            "prefab": "world/prefabs/ui/button.json",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1096,
+                        "y": 512,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 176,
+                        "y": 52
+                    },
+                    "fill": {
+                        "r": 52,
+                        "g": 86,
+                        "b": 64,
+                        "a": 255
+                    },
+                    "layer": 110
+                },
+                "Props": {
+                    "action": "upgrade",
+                    "key": "Upgrade"
+                }
+            },
+            "children": [
+                {
+                    "name": "Label",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 12,
+                                "y": 7,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "Upgrade",
+                            "size": 18,
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Detail",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 12,
+                                "y": 29,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "",
+                            "size": 14,
+                            "color": {
+                                "r": 255,
+                                "g": 215,
+                                "b": 64,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Key",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 158,
+                                "y": 6,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "U",
+                            "size": 13,
+                            "color": {
+                                "r": 170,
+                                "g": 178,
+                                "b": 190,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Sell button",
+            "prefab": "world/prefabs/ui/button.json",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1096,
+                        "y": 570,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 176,
+                        "y": 52
+                    },
+                    "fill": {
+                        "r": 96,
+                        "g": 64,
+                        "b": 52,
+                        "a": 255
+                    },
+                    "layer": 110
+                },
+                "Props": {
+                    "action": "sell",
+                    "key": "Sell"
+                }
+            },
+            "children": [
+                {
+                    "name": "Label",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 12,
+                                "y": 7,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "Sell",
+                            "size": 18,
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Detail",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 12,
+                                "y": 29,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "",
+                            "size": 14,
+                            "color": {
+                                "r": 255,
+                                "g": 215,
+                                "b": 64,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Key",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 158,
+                                "y": 6,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "S",
+                            "size": 13,
+                            "color": {
+                                "r": 170,
+                                "g": 178,
+                                "b": 190,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Next wave button",
+            "prefab": "world/prefabs/ui/button.json",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1096,
+                        "y": 632,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 176,
+                        "y": 56
+                    },
+                    "fill": {
+                        "r": 60,
+                        "g": 70,
+                        "b": 110,
+                        "a": 255
+                    },
+                    "layer": 110
+                },
+                "Props": {
+                    "action": "wave",
+                    "key": "NextWave"
+                }
+            },
+            "children": [
+                {
+                    "name": "Label",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 12,
+                                "y": 7,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "Next wave",
+                            "size": 20,
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Detail",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 12,
+                                "y": 31,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "",
+                            "size": 16,
+                            "color": {
+                                "r": 255,
+                                "g": 215,
+                                "b": 64,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Key",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 126,
+                                "y": 6,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "Space",
+                            "size": 13,
+                            "color": {
+                                "r": 170,
+                                "g": 178,
+                                "b": 190,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Speed button",
+            "prefab": "world/prefabs/ui/button.json",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1096,
+                        "y": 696,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 84,
+                        "y": 60
+                    },
+                    "fill": {
+                        "r": 58,
+                        "g": 66,
+                        "b": 80,
+                        "a": 255
+                    },
+                    "layer": 110
+                },
+                "Props": {
+                    "action": "speed",
+                    "key": "Speed"
+                }
+            },
+            "children": [
+                {
+                    "name": "Label",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 12,
+                                "y": 7,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "Speed",
+                            "size": 17,
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Detail",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 12,
+                                "y": 36,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "x1",
+                            "size": 15,
+                            "color": {
+                                "r": 255,
+                                "g": 215,
+                                "b": 64,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Key",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 66,
+                                "y": 6,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "F",
+                            "size": 13,
+                            "color": {
+                                "r": 170,
+                                "g": 178,
+                                "b": 190,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Pause button",
+            "prefab": "world/prefabs/ui/button.json",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 1188,
+                        "y": 696,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 84,
+                        "y": 60
+                    },
+                    "fill": {
+                        "r": 58,
+                        "g": 66,
+                        "b": 80,
+                        "a": 255
+                    },
+                    "layer": 110
+                },
+                "Props": {
+                    "action": "pause"
+                }
+            },
+            "children": [
+                {
+                    "name": "Label",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 12,
+                                "y": 7,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "Pause",
+                            "size": 17,
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                },
+                {
+                    "name": "Detail",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 12,
+                                "y": 36,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "Esc",
+                            "size": 15,
+                            "color": {
+                                "r": 255,
+                                "g": 215,
+                                "b": 64,
+                                "a": 255
+                            },
+                            "layer": 112
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Pause",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 1088,
+                        "y": 768
+                    },
+                    "fill": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0,
+                        "a": 160
+                    },
+                    "outline": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0,
+                        "a": 0
+                    },
+                    "outlineThickness": 0,
+                    "layer": 200
+                },
+                "Scripts": {
+                    "scripts": [
+                        "scripts/pause.lua"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "name": "Paused",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 430,
+                                "y": 220,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "PAUSED",
+                            "size": 56,
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 202
+                        }
+                    }
+                },
+                {
+                    "name": "Help",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 388,
+                                "y": 300,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "Esc or the Pause button to resume",
+                            "size": 20,
+                            "color": {
+                                "r": 200,
+                                "g": 205,
+                                "b": 215,
+                                "a": 255
+                            },
+                            "layer": 202
+                        }
+                    }
+                },
+                {
+                    "name": "Resume button",
+                    "prefab": "world/prefabs/ui/button.json",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 434.0,
+                                "y": 360,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Rectangle": {
+                            "size": {
+                                "x": 220,
+                                "y": 54
+                            },
+                            "fill": {
+                                "r": 58,
+                                "g": 66,
+                                "b": 80,
+                                "a": 255
+                            },
+                            "layer": 205
+                        },
+                        "Props": {
+                            "action": "pause"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "Label",
+                            "components": {
+                                "Transform": {
+                                    "position": {
+                                        "x": 70,
+                                        "y": 12.7,
+                                        "z": 0
+                                    },
+                                    "scale": {
+                                        "x": 1,
+                                        "y": 1,
+                                        "z": 1
+                                    },
+                                    "rotationDegrees": {
+                                        "x": 0,
+                                        "y": 0,
+                                        "z": 0
+                                    },
+                                    "origin": {
+                                        "x": 0,
+                                        "y": 0,
+                                        "z": 0
+                                    }
+                                },
+                                "Text": {
+                                    "font": "assets/font.ttf",
+                                    "value": "Resume",
+                                    "size": 22,
+                                    "color": {
+                                        "r": 255,
+                                        "g": 255,
+                                        "b": 255,
+                                        "a": 255
+                                    },
+                                    "layer": 207
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Menu button",
+                    "prefab": "world/prefabs/ui/button.json",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 434.0,
+                                "y": 426,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Rectangle": {
+                            "size": {
+                                "x": 220,
+                                "y": 54
+                            },
+                            "fill": {
+                                "r": 58,
+                                "g": 66,
+                                "b": 80,
+                                "a": 255
+                            },
+                            "layer": 205
+                        },
+                        "Props": {
+                            "action": "menu"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "Label",
+                            "components": {
+                                "Transform": {
+                                    "position": {
+                                        "x": 42,
+                                        "y": 12.7,
+                                        "z": 0
+                                    },
+                                    "scale": {
+                                        "x": 1,
+                                        "y": 1,
+                                        "z": 1
+                                    },
+                                    "rotationDegrees": {
+                                        "x": 0,
+                                        "y": 0,
+                                        "z": 0
+                                    },
+                                    "origin": {
+                                        "x": 0,
+                                        "y": 0,
+                                        "z": 0
+                                    }
+                                },
+                                "Text": {
+                                    "font": "assets/font.ttf",
+                                    "value": "Back to menu",
+                                    "size": 22,
+                                    "color": {
+                                        "r": 255,
+                                        "g": 255,
+                                        "b": 255,
+                                        "a": 255
+                                    },
+                                    "layer": 207
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

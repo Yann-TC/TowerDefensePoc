@@ -1,0 +1,83 @@
+{
+    "version": 2,
+    "name": "Explosion (silent)",
+    "components": {
+        "Transform": {
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+            },
+            "rotationDegrees": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "origin": {
+                "x": 32,
+                "y": 40,
+                "z": 0
+            }
+        },
+        "Sprite": {
+            "texture": "assets/tilesheet.png",
+            "source": {
+                "x": 1408,
+                "y": 768,
+                "width": 64,
+                "height": 64
+            },
+            "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "layer": 22
+        },
+        "Animation": {
+            "frames": [
+                {
+                    "x": 1216,
+                    "y": 768,
+                    "width": 64,
+                    "height": 64
+                },
+                {
+                    "x": 1280,
+                    "y": 768,
+                    "width": 64,
+                    "height": 64
+                },
+                {
+                    "x": 1408,
+                    "y": 768,
+                    "width": 64,
+                    "height": 64
+                },
+                {
+                    "x": 1216,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64
+                }
+            ],
+            "frameDuration": 0.09,
+            "loop": false
+        },
+        "Props": {
+            "life": 0.7,
+            "grow": 0.8
+        },
+        "Scripts": {
+            "scripts": [
+                "scripts/effect.lua"
+            ]
+        }
+    }
+}

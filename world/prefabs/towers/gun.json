@@ -1,0 +1,350 @@
+{
+    "version": 2,
+    "name": "Gun tower",
+    "components": {
+        "Transform": {
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+            },
+            "rotationDegrees": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "origin": {
+                "x": 32,
+                "y": 32,
+                "z": 0
+            }
+        },
+        "Sprite": {
+            "texture": "assets/tilesheet.png",
+            "source": {
+                "x": 1216,
+                "y": 448,
+                "width": 64,
+                "height": 64
+            },
+            "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "layer": 10
+        },
+        "Scripts": {
+            "scripts": [
+                "scripts/tower.lua"
+            ]
+        },
+        "BoxCollider": {
+            "bounds": {
+                "x": 0,
+                "y": 0,
+                "width": 64,
+                "height": 64
+            }
+        }
+    },
+    "children": [
+        {
+            "name": "Turret",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 32,
+                        "y": 32,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 32,
+                        "y": 32,
+                        "z": 0
+                    }
+                },
+                "Sprite": {
+                    "texture": "assets/tilesheet.png",
+                    "source": {
+                        "x": 1216,
+                        "y": 640,
+                        "width": 64,
+                        "height": 64
+                    },
+                    "color": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255,
+                        "a": 255
+                    },
+                    "layer": 15
+                },
+                "AnimationStateMachine": {
+                    "initial": "basic",
+                    "states": {
+                        "basic": {
+                            "frames": [
+                                {
+                                    "x": 1216,
+                                    "y": 640,
+                                    "width": 64,
+                                    "height": 64
+                                }
+                            ],
+                            "frameDuration": 1,
+                            "loop": true
+                        },
+                        "heavy": {
+                            "frames": [
+                                {
+                                    "x": 1280,
+                                    "y": 640,
+                                    "width": 64,
+                                    "height": 64
+                                }
+                            ],
+                            "frameDuration": 1,
+                            "loop": true
+                        }
+                    },
+                    "transitions": [
+                        {
+                            "from": "*",
+                            "to": "heavy",
+                            "when": [
+                                {
+                                    "param": "level",
+                                    "op": ">=",
+                                    "value": 3
+                                }
+                            ]
+                        },
+                        {
+                            "from": "*",
+                            "to": "basic",
+                            "when": [
+                                {
+                                    "param": "level",
+                                    "op": "<",
+                                    "value": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "params": {
+                        "floats": {
+                            "level": 1
+                        },
+                        "bools": {
+                            "loaded": true
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Range",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 32,
+                        "y": 32,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 150,
+                        "y": 150,
+                        "z": 0
+                    }
+                },
+                "Circle": {
+                    "radius": 150,
+                    "fill": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0,
+                        "a": 0
+                    },
+                    "outline": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0,
+                        "a": 0
+                    },
+                    "outlineThickness": 2,
+                    "layer": 8
+                }
+            }
+        },
+        {
+            "name": "Level pip",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 22,
+                        "y": 56,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 4,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                "Circle": {
+                    "radius": 4,
+                    "fill": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255,
+                        "a": 0
+                    },
+                    "outline": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0,
+                        "a": 0
+                    },
+                    "outlineThickness": 0,
+                    "layer": 16
+                }
+            }
+        },
+        {
+            "name": "Level pip",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 32,
+                        "y": 56,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 4,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                "Circle": {
+                    "radius": 4,
+                    "fill": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255,
+                        "a": 0
+                    },
+                    "outline": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0,
+                        "a": 0
+                    },
+                    "outlineThickness": 0,
+                    "layer": 16
+                }
+            }
+        },
+        {
+            "name": "Level pip",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 42,
+                        "y": 56,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 4,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                "Circle": {
+                    "radius": 4,
+                    "fill": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255,
+                        "a": 0
+                    },
+                    "outline": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0,
+                        "a": 0
+                    },
+                    "outlineThickness": 0,
+                    "layer": 16
+                }
+            }
+        },
+        {
+            "name": "Shot sound",
+            "components": {
+                "AudioSource": {
+                    "sound": "assets/Audio/impactMetal_light_000.ogg",
+                    "volume": 18,
+                    "loop": false,
+                    "playing": false
+                }
+            }
+        }
+    ]
+}

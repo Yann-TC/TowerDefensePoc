@@ -1,0 +1,52 @@
+{
+    "version": 2,
+    "name": "Scorch mark",
+    "components": {
+        "Transform": {
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "scale": {
+                "x": 0.8,
+                "y": 0.8,
+                "z": 1
+            },
+            "rotationDegrees": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "origin": {
+                "x": 32,
+                "y": 32,
+                "z": 0
+            }
+        },
+        "Sprite": {
+            "texture": "assets/tilesheet.png",
+            "source": {
+                "x": 1344,
+                "y": 0,
+                "width": 64,
+                "height": 64
+            },
+            "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 200
+            },
+            "layer": 2
+        },
+        "Props": {
+            "life": 6
+        },
+        "Scripts": {
+            "scripts": [
+                "scripts/effect.lua"
+            ]
+        }
+    }
+}

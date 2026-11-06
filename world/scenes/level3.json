@@ -1,0 +1,304 @@
+{
+    "version": 2,
+    "name": "level3",
+    "resources": {
+        "SceneMusic": {
+            "music": "assets/Audio/game_music.wav",
+            "volume": 45,
+            "loop": true,
+            "playing": true
+        }
+    },
+    "entities": [
+        {
+            "name": "Level",
+            "prefab": "world/prefabs/level.json",
+            "components": {
+                "Props": {
+                    "name": "Stress Test",
+                    "tileSize": 64,
+                    "grid": [
+                        "S###############T",
+                        "...............#.",
+                        "...............#.",
+                        ".###############.",
+                        "p#..............r",
+                        ".#...............",
+                        ".###############.",
+                        "...............#B",
+                        "t..............#.",
+                        ".###############.",
+                        ".#..............t",
+                        ".E..............T"
+                    ],
+                    "gold": 30000,
+                    "lives": 9999,
+                    "difficulty": 1,
+                    "waves": [
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/soldier.json",
+                                    "count": 300,
+                                    "interval": 0.04
+                                }
+                            ],
+                            "bonus": 0
+                        },
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/soldier.json",
+                                    "count": 300,
+                                    "interval": 0.02
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/scout.json",
+                                    "count": 200,
+                                    "interval": 0.03,
+                                    "delay": 2
+                                }
+                            ],
+                            "bonus": 0
+                        },
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/plane.json",
+                                    "count": 200,
+                                    "interval": 0.03
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/soldier.json",
+                                    "count": 500,
+                                    "interval": 0.015,
+                                    "delay": 1
+                                }
+                            ],
+                            "bonus": 0
+                        },
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/scout.json",
+                                    "count": 1000,
+                                    "interval": 0.008
+                                }
+                            ],
+                            "bonus": 0
+                        },
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/tank.json",
+                                    "count": 60,
+                                    "interval": 0.2
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/soldier.json",
+                                    "count": 1500,
+                                    "interval": 0.006,
+                                    "delay": 2
+                                }
+                            ],
+                            "bonus": 0
+                        },
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/soldier.json",
+                                    "count": 2000,
+                                    "interval": 0.004
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/plane.json",
+                                    "count": 400,
+                                    "interval": 0.02,
+                                    "delay": 3
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/boss.json",
+                                    "count": 10,
+                                    "interval": 2,
+                                    "delay": 5
+                                }
+                            ],
+                            "bonus": 0
+                        },
+                        {
+                            "groups": [
+                                {
+                                    "enemy": "world/prefabs/enemies/soldier.json",
+                                    "count": 2500,
+                                    "interval": 0.002
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/scout.json",
+                                    "count": 1000,
+                                    "interval": 0.004,
+                                    "delay": 2
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/bomber.json",
+                                    "count": 300,
+                                    "interval": 0.02,
+                                    "delay": 4
+                                },
+                                {
+                                    "enemy": "world/prefabs/enemies/tank.json",
+                                    "count": 200,
+                                    "interval": 0.05,
+                                    "delay": 6
+                                }
+                            ],
+                            "bonus": 0
+                        }
+                    ],
+                    "towers": [
+                        {
+                            "kind": "gun",
+                            "col": 2,
+                            "row": 1,
+                            "level": 3
+                        },
+                        {
+                            "kind": "cannon",
+                            "col": 5,
+                            "row": 1,
+                            "level": 3
+                        },
+                        {
+                            "kind": "rocket",
+                            "col": 8,
+                            "row": 1,
+                            "level": 3
+                        },
+                        {
+                            "kind": "missile",
+                            "col": 11,
+                            "row": 1,
+                            "level": 3
+                        },
+                        {
+                            "kind": "gun",
+                            "col": 14,
+                            "row": 1,
+                            "level": 3
+                        },
+                        {
+                            "kind": "cannon",
+                            "col": 2,
+                            "row": 4,
+                            "level": 3
+                        },
+                        {
+                            "kind": "missile",
+                            "col": 5,
+                            "row": 4,
+                            "level": 3
+                        },
+                        {
+                            "kind": "gun",
+                            "col": 8,
+                            "row": 4,
+                            "level": 3
+                        },
+                        {
+                            "kind": "rocket",
+                            "col": 11,
+                            "row": 4,
+                            "level": 3
+                        },
+                        {
+                            "kind": "cannon",
+                            "col": 14,
+                            "row": 4,
+                            "level": 3
+                        },
+                        {
+                            "kind": "gun",
+                            "col": 2,
+                            "row": 7,
+                            "level": 3
+                        },
+                        {
+                            "kind": "rocket",
+                            "col": 5,
+                            "row": 7,
+                            "level": 3
+                        },
+                        {
+                            "kind": "missile",
+                            "col": 8,
+                            "row": 7,
+                            "level": 3
+                        },
+                        {
+                            "kind": "cannon",
+                            "col": 11,
+                            "row": 7,
+                            "level": 3
+                        },
+                        {
+                            "kind": "gun",
+                            "col": 14,
+                            "row": 7,
+                            "level": 3
+                        },
+                        {
+                            "kind": "rocket",
+                            "col": 2,
+                            "row": 10,
+                            "level": 3
+                        },
+                        {
+                            "kind": "gun",
+                            "col": 5,
+                            "row": 10,
+                            "level": 3
+                        },
+                        {
+                            "kind": "cannon",
+                            "col": 8,
+                            "row": 10,
+                            "level": 3
+                        },
+                        {
+                            "kind": "missile",
+                            "col": 11,
+                            "row": 10,
+                            "level": 3
+                        },
+                        {
+                            "kind": "rocket",
+                            "col": 14,
+                            "row": 10,
+                            "level": 3
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Hud",
+            "prefab": "world/prefabs/ui/hud.json"
+        },
+        {
+            "name": "Stats",
+            "prefab": "world/prefabs/ui/stats.json",
+            "components": {
+                "Props": {
+                    "shown": true
+                }
+            }
+        },
+        {
+            "name": "Pointer",
+            "prefab": "world/prefabs/ui/pointer.json"
+        },
+        {
+            "name": "Colliders",
+            "prefab": "world/prefabs/ui/colliders.json"
+        }
+    ]
+}

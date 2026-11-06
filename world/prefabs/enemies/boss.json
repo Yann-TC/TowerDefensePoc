@@ -1,0 +1,180 @@
+{
+    "version": 2,
+    "name": "Desert tank",
+    "components": {
+        "Transform": {
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+            },
+            "rotationDegrees": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "origin": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            }
+        },
+        "Props": {
+            "health": 1700,
+            "speed": 24,
+            "reward": 120,
+            "damage": 10
+        },
+        "Scripts": {
+            "scripts": [
+                "scripts/enemy.lua"
+            ]
+        },
+        "Velocity": {
+            "value": {
+                "x": 0,
+                "y": 0
+            }
+        }
+    },
+    "children": [
+        {
+            "name": "Body",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1.4,
+                        "y": 1.4,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 32,
+                        "y": 32,
+                        "z": 0
+                    }
+                },
+                "Sprite": {
+                    "texture": "assets/tilesheet.png",
+                    "source": {
+                        "x": 1024,
+                        "y": 704,
+                        "width": 64,
+                        "height": 64
+                    },
+                    "color": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255,
+                        "a": 255
+                    },
+                    "layer": 12
+                }
+            }
+        },
+        {
+            "name": "Turret",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1.4,
+                        "y": 1.4,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 32,
+                        "y": 32,
+                        "z": 0
+                    }
+                },
+                "Sprite": {
+                    "texture": "assets/tilesheet.png",
+                    "source": {
+                        "x": 1024,
+                        "y": 768,
+                        "width": 64,
+                        "height": 64
+                    },
+                    "color": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255,
+                        "a": 255
+                    },
+                    "layer": 13
+                }
+            }
+        },
+        {
+            "name": "Health",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": -30.0,
+                        "y": -43.599999999999994,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 60,
+                        "y": 5
+                    },
+                    "fill": {
+                        "r": 60,
+                        "g": 220,
+                        "b": 60,
+                        "a": 0
+                    },
+                    "outline": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0,
+                        "a": 0
+                    },
+                    "outlineThickness": 0,
+                    "layer": 36
+                }
+            }
+        }
+    ]
+}

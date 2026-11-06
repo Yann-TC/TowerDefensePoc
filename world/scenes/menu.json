@@ -1,0 +1,809 @@
+{
+    "version": 2,
+    "name": "menu",
+    "resources": {
+        "SceneMusic": {
+            "music": "assets/Audio/menu_music.wav",
+            "volume": 50,
+            "loop": true,
+            "playing": true
+        }
+    },
+    "entities": [
+        {
+            "name": "Level",
+            "components": {
+                "Props": {
+                    "name": "Menu",
+                    "tileSize": 64,
+                    "grid": [
+                        "T..t....B.....t.T..t",
+                        ".r..p.......o.....r.",
+                        ".......t.........B..",
+                        "B..............R....",
+                        "..p.........t.....p.",
+                        ".t.............p....",
+                        "....r......B......t.",
+                        "T...................",
+                        "..t.....p......t..o.",
+                        "....................",
+                        "S##################E",
+                        ".r....t...o......t.."
+                    ],
+                    "towers": [
+                        {
+                            "kind": "gun",
+                            "col": 3,
+                            "row": 11,
+                            "level": 3
+                        },
+                        {
+                            "kind": "cannon",
+                            "col": 8,
+                            "row": 9,
+                            "level": 2
+                        },
+                        {
+                            "kind": "rocket",
+                            "col": 12,
+                            "row": 11,
+                            "level": 2
+                        },
+                        {
+                            "kind": "missile",
+                            "col": 17,
+                            "row": 9,
+                            "level": 1
+                        }
+                    ],
+                    "interval": 1.6,
+                    "enemies": [
+                        "world/prefabs/enemies/soldier.json",
+                        "world/prefabs/enemies/soldier.json",
+                        "world/prefabs/enemies/scout.json",
+                        "world/prefabs/enemies/heavy.json",
+                        "world/prefabs/enemies/tank.json",
+                        "world/prefabs/enemies/plane.json",
+                        "world/prefabs/enemies/bomber.json"
+                    ]
+                },
+                "Scripts": {
+                    "scripts": [
+                        "scripts/map.lua",
+                        "scripts/menu.lua"
+                    ]
+                }
+            },
+            "children": [
+                {
+                    "name": "Sound click",
+                    "components": {
+                        "AudioSource": {
+                            "sound": "assets/Audio/impactGeneric_light_000.ogg",
+                            "volume": 50,
+                            "loop": false,
+                            "playing": false
+                        },
+                        "Props": {
+                            "sound": "click"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Panel",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 340,
+                        "y": 80,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 600,
+                        "y": 478
+                    },
+                    "fill": {
+                        "r": 20,
+                        "g": 24,
+                        "b": 30,
+                        "a": 220
+                    },
+                    "outline": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255,
+                        "a": 60
+                    },
+                    "outlineThickness": 2,
+                    "layer": 150
+                }
+            }
+        },
+        {
+            "name": "Title",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 400,
+                        "y": 112,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Text": {
+                    "font": "assets/font.ttf",
+                    "value": "TOWER DEFENSE",
+                    "size": 56,
+                    "color": {
+                        "r": 255,
+                        "g": 215,
+                        "b": 64,
+                        "a": 255
+                    },
+                    "layer": 160
+                },
+                "Props": {
+                    "x": 640
+                },
+                "Scripts": {
+                    "scripts": [
+                        "scripts/title.lua"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Subtitle",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 492,
+                        "y": 186,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Text": {
+                    "font": "assets/font.ttf",
+                    "value": "a demo of the Ampersand Engine",
+                    "size": 20,
+                    "color": {
+                        "r": 200,
+                        "g": 205,
+                        "b": 215,
+                        "a": 255
+                    },
+                    "layer": 160
+                }
+            }
+        },
+        {
+            "name": "Level 1 button",
+            "prefab": "world/prefabs/ui/button.json",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 480,
+                        "y": 240,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 320,
+                        "y": 64
+                    },
+                    "fill": {
+                        "r": 58,
+                        "g": 66,
+                        "b": 80,
+                        "a": 255
+                    },
+                    "layer": 160
+                },
+                "Props": {
+                    "action": "scene",
+                    "argument": "level1",
+                    "key": "Tower1"
+                }
+            },
+            "children": [
+                {
+                    "name": "Label",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 91,
+                                "y": 7,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "Green Valley",
+                            "size": 24,
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 162
+                        }
+                    }
+                },
+                {
+                    "name": "Detail",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 101,
+                                "y": 40,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "easy  -  10 waves",
+                            "size": 15,
+                            "color": {
+                                "r": 255,
+                                "g": 215,
+                                "b": 64,
+                                "a": 255
+                            },
+                            "layer": 162
+                        }
+                    }
+                },
+                {
+                    "name": "Key",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 302,
+                                "y": 6,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "1",
+                            "size": 13,
+                            "color": {
+                                "r": 170,
+                                "g": 178,
+                                "b": 190,
+                                "a": 255
+                            },
+                            "layer": 162
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Level 2 button",
+            "prefab": "world/prefabs/ui/button.json",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 480,
+                        "y": 318,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 320,
+                        "y": 64
+                    },
+                    "fill": {
+                        "r": 58,
+                        "g": 66,
+                        "b": 80,
+                        "a": 255
+                    },
+                    "layer": 160
+                },
+                "Props": {
+                    "action": "scene",
+                    "argument": "level2",
+                    "key": "Tower2"
+                }
+            },
+            "children": [
+                {
+                    "name": "Label",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 94,
+                                "y": 7,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "Twin Rivers",
+                            "size": 24,
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 162
+                        }
+                    }
+                },
+                {
+                    "name": "Detail",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 102,
+                                "y": 40,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "hard  -  15 waves",
+                            "size": 15,
+                            "color": {
+                                "r": 255,
+                                "g": 215,
+                                "b": 64,
+                                "a": 255
+                            },
+                            "layer": 162
+                        }
+                    }
+                },
+                {
+                    "name": "Key",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 302,
+                                "y": 6,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "2",
+                            "size": 13,
+                            "color": {
+                                "r": 170,
+                                "g": 178,
+                                "b": 190,
+                                "a": 255
+                            },
+                            "layer": 162
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Level 3 button",
+            "prefab": "world/prefabs/ui/button.json",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 480,
+                        "y": 396,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Rectangle": {
+                    "size": {
+                        "x": 320,
+                        "y": 64
+                    },
+                    "fill": {
+                        "r": 58,
+                        "g": 66,
+                        "b": 80,
+                        "a": 255
+                    },
+                    "layer": 160
+                },
+                "Props": {
+                    "action": "scene",
+                    "argument": "level3",
+                    "key": "Tower3"
+                }
+            },
+            "children": [
+                {
+                    "name": "Label",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 96,
+                                "y": 7,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "Stress Test",
+                            "size": 24,
+                            "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 255
+                            },
+                            "layer": 162
+                        }
+                    }
+                },
+                {
+                    "name": "Detail",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 53,
+                                "y": 40,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "7 waves, thousands of enemies",
+                            "size": 15,
+                            "color": {
+                                "r": 255,
+                                "g": 215,
+                                "b": 64,
+                                "a": 255
+                            },
+                            "layer": 162
+                        }
+                    }
+                },
+                {
+                    "name": "Key",
+                    "components": {
+                        "Transform": {
+                            "position": {
+                                "x": 302,
+                                "y": 6,
+                                "z": 0
+                            },
+                            "scale": {
+                                "x": 1,
+                                "y": 1,
+                                "z": 1
+                            },
+                            "rotationDegrees": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            },
+                            "origin": {
+                                "x": 0,
+                                "y": 0,
+                                "z": 0
+                            }
+                        },
+                        "Text": {
+                            "font": "assets/font.ttf",
+                            "value": "3",
+                            "size": 13,
+                            "color": {
+                                "r": 170,
+                                "g": 178,
+                                "b": 190,
+                                "a": 255
+                            },
+                            "layer": 162
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Help",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 484,
+                        "y": 498,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Text": {
+                    "font": "assets/font.ttf",
+                    "value": "Mouse: build and select towers   1-4: pick a tower",
+                    "size": 14,
+                    "color": {
+                        "r": 170,
+                        "g": 178,
+                        "b": 190,
+                        "a": 255
+                    },
+                    "layer": 160
+                }
+            }
+        },
+        {
+            "name": "Help",
+            "components": {
+                "Transform": {
+                    "position": {
+                        "x": 442,
+                        "y": 520,
+                        "z": 0
+                    },
+                    "scale": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "rotationDegrees": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "origin": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                "Text": {
+                    "font": "assets/font.ttf",
+                    "value": "U / S: upgrade / sell   Space: next wave   F: speed   Esc: pause",
+                    "size": 14,
+                    "color": {
+                        "r": 170,
+                        "g": 178,
+                        "b": 190,
+                        "a": 255
+                    },
+                    "layer": 160
+                }
+            }
+        },
+        {
+            "name": "Pointer",
+            "prefab": "world/prefabs/ui/pointer.json"
+        },
+        {
+            "name": "Colliders",
+            "prefab": "world/prefabs/ui/colliders.json"
+        }
+    ]
+}

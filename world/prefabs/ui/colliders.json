@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "name": "Colliders",
+    "components": {
+        "Props": {
+            "shown": false
+        },
+        "Scripts": {
+            "scripts": [
+                "scripts/colliders.lua"
+            ]
+        }
+    }
+}

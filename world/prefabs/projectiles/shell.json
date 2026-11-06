@@ -1,0 +1,60 @@
+{
+    "version": 2,
+    "name": "Cannon shell",
+    "components": {
+        "Transform": {
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "scale": {
+                "x": 0.8,
+                "y": 0.8,
+                "z": 1
+            },
+            "rotationDegrees": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "origin": {
+                "x": 32,
+                "y": 32,
+                "z": 0
+            }
+        },
+        "Sprite": {
+            "texture": "assets/tilesheet.png",
+            "source": {
+                "x": 1344,
+                "y": 704,
+                "width": 64,
+                "height": 64
+            },
+            "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "layer": 18
+        },
+        "Velocity": {
+            "value": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Props": {
+            "speed": 420,
+            "homing": false,
+            "explosion": 0.7
+        },
+        "Scripts": {
+            "scripts": [
+                "scripts/projectile.lua"
+            ]
+        }
+    }
+}

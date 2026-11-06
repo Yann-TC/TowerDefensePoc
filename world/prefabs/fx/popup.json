@@ -1,0 +1,54 @@
+{
+    "version": 2,
+    "name": "Floating text",
+    "components": {
+        "Transform": {
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+            },
+            "rotationDegrees": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "origin": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            }
+        },
+        "Text": {
+            "font": "assets/font.ttf",
+            "value": "+0",
+            "size": 18,
+            "color": {
+                "r": 255,
+                "g": 215,
+                "b": 64,
+                "a": 255
+            },
+            "layer": 40
+        },
+        "Velocity": {
+            "value": {
+                "x": 0,
+                "y": -45
+            }
+        },
+        "Props": {
+            "life": 0.9
+        },
+        "Scripts": {
+            "scripts": [
+                "scripts/effect.lua"
+            ]
+        }
+    }
+}
