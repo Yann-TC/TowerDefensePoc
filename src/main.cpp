@@ -68,7 +68,7 @@ void addSystems(ecs::Scheduler& scheduler, ecs::World& world,
     scheduler.add<input::InputSystem>(pollWindow);
     auto& scripting = scheduler.add<ampersand::scripting::ScriptingSystem>();
     scenes.bindScripting(scripting, world);
-    td::bindScripting(scripting, scheduler, world, scenes, config);
+    td::bindScripting(scripting, scheduler, world, config);
     scheduler.add<td::ScriptErrorLog>();
     scheduler.add<ampersand::physics::MovementSystem>();
     // After the scripts moved the pointer: what it touches is read by the
@@ -90,7 +90,7 @@ void run(const std::string& config) {
 
     ampersand::core::FrameTimer timer;
     while (world.getResource<render::Renderer>().isOpen) {
-        // Scaled here: the Clock of the engine has no time scale.
+        // The game time scale is separate from the engine's Clock resource.
         scheduler.update(timer.tick() *
                          world.getResource<td::TimeScale>().value);
     }

@@ -20,7 +20,7 @@ function Game:start(dt)
     local props = getProps(self.entity)
     State.game = State.newGame(props.gold, props.lives)
     State.game.playing = true
-    getClock().timeScale = 1
+    setTimeScale(1)
     Units.buildTowers(props.towers)
     for _, child in ipairs(getChildren(self.entity)) do
         if not hasAudioSource(child) then
@@ -34,7 +34,7 @@ function Game:update(dt)
     game.messageTime = math.max(0, game.messageTime - dt)
     self:handleRequest(game)
     self:handleKeys(game)
-    getClock().timeScale = game.paused and 0 or game.speed
+    setTimeScale(game.paused and 0 or game.speed)
     if game.paused then
         return
     end

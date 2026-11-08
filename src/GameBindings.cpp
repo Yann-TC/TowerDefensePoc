@@ -1,23 +1,16 @@
 #include "GameBindings.hpp"
 
 #include <ampersand/core/ecs/EventQueue.hpp>
-#include <ampersand/core/resources/Clock.hpp>
-#include <ampersand/core/resources/Stats.hpp>
-#include <ampersand/physics/resources/Collisions.hpp>
 #include <cmath>
 #include <cstdint>
 #include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <stdexcept>
-#include <utility>
-#include <vector>
 
 namespace td {
 
 namespace ecs = ampersand::core::ecs;
-using ampersand::core::Clock;
-using ampersand::core::Stats;
 using ampersand::scripting::ScriptError;
 using nlohmann::json;
 
@@ -71,43 +64,16 @@ void bindProps(sol::state& lua, ecs::World& world) {
     });
 }
 
-void bindResources(sol::state& lua, ecs::World& world) {
-    lua.new_usertype<Clock>(
-        "Clock", sol::no_constructor, "dt", sol::readonly(&Clock::dt),
-        "elapsed", sol::readonly(&Clock::elapsed), "timeScale",
-        sol::property(
-            [&world](const Clock&) {
-                return world.getResource<TimeScale>().value;
-            },
-            [&world](Clock&, float scale) {
-                if (!std::isfinite(scale) || scale < 0.0F) {
-                    throw std::invalid_argument(
-                        "timeScale must be finite and not negative");
-                }
-                world.getResource<TimeScale>().value = scale;
-            }));
-    lua.set_function("getClock", [&world]() -> Clock& {
-        return world.getResource<Clock>();
+void bindTimeScale(sol::state& lua, ecs::World& world) {
+    lua.set_function("getTimeScale", [&world] {
+        return world.getResource<TimeScale>().value;
     });
-    lua.new_usertype<Stats>(
-        "Stats", sol::no_constructor, "frameMs",
-        sol::readonly(&Stats::frameMs), "updateMs",
-        sol::readonly(&Stats::updateMs), "fps", sol::readonly(&Stats::fps),
-        "entities", sol::readonly(&Stats::entities));
-    lua.set_function("getStats", [&world]() -> const Stats& {
-        return world.getResource<Stats>();
-    });
-    lua.set_function("getCollisions", [&world](ecs::Entity entity) {
-        std::vector<ecs::Entity> touching;
-        for (const auto& [first, second] :
-             world.getResource<ampersand::physics::Collisions>().pairs) {
-            if (first == entity) {
-                touching.push_back(second);
-            } else if (second == entity) {
-                touching.push_back(first);
-            }
+    lua.set_function("setTimeScale", [&world](float scale) {
+        if (!std::isfinite(scale) || scale < 0.0F) {
+            throw std::invalid_argument(
+                "timeScale must be finite and not negative");
         }
-        return sol::as_table(std::move(touching));
+        world.getResource<TimeScale>().value = scale;
     });
 }
 
@@ -139,15 +105,12 @@ void registerComponents(ampersand::scene::SceneManager& scenes) {
 
 void bindScripting(ampersand::scripting::ScriptingSystem& scripting,
                    ecs::Scheduler& scheduler, ecs::World& world,
-                   const ampersand::scene::SceneManager& scenes,
                    const std::string& config) {
     world.addResource<TimeScale>();
     scheduler.addEventQueue<ScriptError>();
     sol::state& lua = scripting.lua();
-    lua.set_function("getCurrentScene",
-                     [&scenes] { return scenes.getCurrentScene(); });
     bindProps(lua, world);
-    bindResources(lua, world);
+    bindTimeScale(lua, world);
     bindModules(lua, readGameRoot(config));
 }
 

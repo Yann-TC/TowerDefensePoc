@@ -112,7 +112,7 @@ function Util.centerText(entity, x)
 end
 
 function Util.changeScene(name)
-    getClock().timeScale = 1
+    setTimeScale(1)
     loadScene(name)
 end
 

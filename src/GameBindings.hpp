@@ -24,9 +24,9 @@ struct Props {
 };
 
 /**
- * @brief Speed of the time, set by the scripts (getClock().timeScale): 0
- * pauses, 2 runs twice as fast. The loop multiplies the dt given to the
- * Scheduler by it, so the engine's Stats keep the real times.
+ * @brief Speed of the game time, set by the scripts with setTimeScale: 0
+ * pauses and 2 runs twice as fast. The loop scales the dt given to the
+ * Scheduler; the engine Clock remains its own resource.
  */
 struct TimeScale {
     float value{1.0F};
@@ -45,16 +45,15 @@ void registerComponents(ampersand::scene::SceneManager& scenes);
 
 /**
  * @brief Adds the TimeScale and EventQueue<ScriptError> resources, and gives
- * the scripts getProps, hasProps, getCurrentScene, getClock, getStats (the
- * engine's Stats, read only), getCollisions and require of the modules
- * gameRoot/scripts/<name>.lua.
+ * the scripts getProps, hasProps, getTimeScale, setTimeScale and require of
+ * the modules gameRoot/scripts/<name>.lua. The engine provides getClock,
+ * getStats, getCollisions and getCurrentScene.
  *
  * @param config Configuration file, read for its gameRoot.
  */
 void bindScripting(ampersand::scripting::ScriptingSystem& scripting,
                    ampersand::core::ecs::Scheduler& scheduler,
                    ampersand::core::ecs::World& world,
-                   const ampersand::scene::SceneManager& scenes,
                    const std::string& config);
 
 }  // namespace td

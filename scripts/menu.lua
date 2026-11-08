@@ -9,7 +9,7 @@ function Menu:start(dt)
     self.props = getProps(self.entity)
     self.timer = 1
     State.game = State.newGame(0, 0)
-    getClock().timeScale = 1
+    setTimeScale(1)
     Units.buildTowers(self.props.towers)
 end
 
